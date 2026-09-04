@@ -26,12 +26,14 @@ make check      # lint, typecheck, tests
 
 ## Deploy
 
-Needs Docker on the host.
+Every push to `main` builds the image and publishes it as `ghcr.io/mausv/game-calendar:latest` (tags `v*` also get a version tag). On a host with Docker:
 
 ```
-make up         # build the image and start it on port 3000
+make deploy     # pull the published image and start it on port 3000
 make logs
 make down
 ```
+
+`make up` builds the image from source instead of pulling it.
 
 Google Calendar fetches subscriptions from its own servers, so the host has to be reachable from the internet for it; Apple Calendar and Outlook on the same network only need the LAN address.

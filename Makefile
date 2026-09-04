@@ -1,4 +1,4 @@
-.PHONY: install dev build start lint typecheck test up down logs check
+.PHONY: install dev build start lint typecheck test up deploy down logs check
 
 install:
 	pnpm install
@@ -23,6 +23,10 @@ test:
 
 up:
 	docker compose up -d --build
+
+deploy:
+	docker compose pull
+	docker compose up -d
 
 down:
 	docker compose down

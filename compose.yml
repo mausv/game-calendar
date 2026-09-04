@@ -1,5 +1,6 @@
 services:
   game-calendar:
+    image: ghcr.io/mausv/game-calendar:latest
     build: .
     ports:
       - "3000:3000"
