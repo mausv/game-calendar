@@ -37,3 +37,10 @@ make down
 `make up` builds the image from source instead of pulling it.
 
 Google Calendar fetches subscriptions from its own servers, so the host has to be reachable from the internet for it; Apple Calendar and Outlook on the same network only need the LAN address.
+
+## Release
+
+```
+pnpm version minor      # bumps package.json and creates the vX.Y.Z tag
+git push --follow-tags  # the tag publishes ghcr.io/mausv/game-calendar:X.Y.Z
+```
